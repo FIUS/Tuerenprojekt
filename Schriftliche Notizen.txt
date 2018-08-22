@@ -1,0 +1,28 @@
+Bereits Vorhanden:
+Magnetsensor (https://tutorials-raspberrypi.de/ueberwachung-von-fenstern-und-tueren-mit-dem-raspberry-pi/)
+
+Benötigte Komponenten:
+Für die Nutzung des Magnetsensors: BC547 Transistor, Widerstand 470 Ohm und 10k Ohm. (https://tutorials-raspberrypi.de/ueberwachung-von-fenstern-und-tueren-mit-dem-raspberry-pi/)
+
+Bibliotheken/Programme:
+GPIO-Setup: https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-gpio
+
+Beispielcode:
+Ständiges Anzeigen des Sensorzustandes:
+
+import RPi.GPIO as GPIO
+ 
+GPIO.setmode(GPIO.BCM) # GPIO Nummern statt Board Nummern
+ 
+MAGNET_GPIO = 17
+GPIO.setup(MAGNET_GPIO, GPIO.IN) # GPIO Modus zuweisen
+print GPIO.input(MAGNET_GPIO)
+
+
+Mit Funktionsaufruf:
+GPIO.add_event_detect(MAGNET_GPIO, GPIO.BOTH, callback=my_callback)
+
+Definieren von Funktionen: Beispiel:
+def dictionarycheck(message):
+ print "I will look in the dictionary for", message
+ return "hello"

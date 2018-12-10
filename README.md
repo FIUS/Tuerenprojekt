@@ -2,7 +2,7 @@
 Dieses Repo fasst zusammen wie die Information ob die Fachschaftstür offen ist, auf unsere Webseite gelangt.
 
 ## Elektronik
-Das Signal kommt bei unserem Raspberry als einfache 1 oder 0 an.
+Das Signal kommt bei unserem Raspberry als einfache 1 oder 0 auf einem der GPIO Pins an.
 
 ## Software
 Die Software die den Sesnor ausliest und die Information als HTTP Endpunkt bereitstellt ist teil von https://github.com/FIUS/RoomSensorApi.
